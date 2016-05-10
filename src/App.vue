@@ -2,22 +2,35 @@
   <div id="app">
     <img class="logo" src="./assets/logo.png">
     <hello></hello>
-    <p>
-      Welcome to your Vue.js app!
-    </p>
-    <p style="color:red">
-      It seems you are using an outdated version of vue-cli.<br>
-      Upgrade to vue-cli@2.x to get access to newer versions of this template.
-    </p>
+    <h1 style="color:red">
+      Hello world!
+    </h1>
+    <su-button @click:"myBtnClick">测试按钮</su-button>
+    <su-input v-model='myTxt'>输入文字：</su-input>
+    <div>{{myTxt}}</div>
   </div>
 </template>
 
 <script>
 import Hello from './components/Hello'
-
+import su from 'sui';
 export default {
   components: {
-    Hello
+    'Hello':Hello,
+    'suButton': su.components.suButton,
+    'suInput': su.components.suInput
+  },
+  data(){
+    var d = {
+      myTxt:""
+    }
+    return d;
+  },
+  methods:{
+    myBtnClick:function(){
+      console.log(1)
+      //alert(this.myTxt);
+    }
   }
 }
 </script>
