@@ -5,7 +5,7 @@
     <h1 style="color:red">
       Hello world!
     </h1>
-    <su-button @click:"myBtnClick">测试按钮</su-button>
+    <su-button @click="myBtnClick">测试按钮</su-button>
     <su-input v-model='myTxt'>输入文字：</su-input>
     <div>{{myTxt}}</div>
   </div>
