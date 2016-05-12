@@ -16,6 +16,7 @@
     "sui": "*"
   },
   "devDependencies": {
+    "http-proxy-middleware": "^0.15.0",
     "eventsource-polyfill": "^0.9.6",
     "connect-history-api-fallback": "^1.2.0",
     "babel-core": "^6.0.0",
