@@ -6,7 +6,7 @@
       Hello world!
     </h1>
     <su-button @click="myBtnClick">测试按钮</su-button>
-    <su-input v-model='myTxt'>输入文字：</su-input>
+    <su-input v-model='myTxt'></su-input>
     <div>{{myTxt}}</div>
   </div>
 </template>
@@ -28,8 +28,7 @@ export default {
   },
   methods:{
     myBtnClick:function(){
-      console.log(1)
-      //alert(this.myTxt);
+      this.myTxt = 'summer'
     }
   }
 }
