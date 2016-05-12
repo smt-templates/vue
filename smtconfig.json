@@ -1,0 +1,24 @@
+{
+    "ask": [
+        {
+            "name": "name",
+            "message": "项目名称:",
+            "default": "$curPath$"
+        },
+        {
+            "name": "description",
+            "message": "项目描述:"
+        },
+        {
+            "name": "author",
+            "message": "创建者:"
+        }
+    ],
+    "files": [
+        "package.json",
+        "index.html"
+    ],
+    "after":{
+        "readme":"\n----------------------\n  <green>npm install  \n  npm run dev\n  npm run build</green>"
+    }
+}
