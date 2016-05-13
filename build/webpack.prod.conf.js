@@ -8,11 +8,9 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = merge(baseWebpackConfig, {
-  devtool: config.build.productionSourceMap ? '#source-map' : false,
   output: {
     path: config.build.assetsRoot,
-    filename: path.join(config.build.assetsSubDirectory, '[name].[chunkhash].js'),
-    chunkFilename: path.join(config.build.assetsSubDirectory, '[id].[chunkhash].js')
+    filename: path.join(config.build.assetsSubDirectory, '[name].js')
   },
   vue: {
     loaders: cssLoaders({
