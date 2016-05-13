@@ -16,7 +16,8 @@
 	"vue-router":"*",
     "sui": "*"
   },
-  "devDependencies": {
+  "devDependencies": {,
+    "shelljs": "^0.7.0",
     "http-proxy-middleware": "^0.15.0",
     "eventsource-polyfill": "^0.9.6",
     "connect-history-api-fallback": "^1.2.0",
