@@ -5,7 +5,8 @@
     <h1 style="color:red">
       Hello world!
     </h1>
-    <su-button @click="myBtnClick">测试按钮</su-button>
+    <su-button @click="myBtnClickGet">测试get</su-button>
+    <su-button @click="myBtnClickPost">测试post</su-button>
     <su-input v-model='myTxt'></su-input>
     <div>{{myTxt}}</div>
   </div>
@@ -27,8 +28,33 @@ export default {
     return d;
   },
   methods:{
-    myBtnClick:function(){
-      this.myTxt = 'summer'
+    // 测试使用get接口
+    myBtnClickGet:function(){
+      this.$http.get('/data', {name:'测试后台 get'}, {
+            headers: {
+                "X-Requested-With": "XMLHttpRequest"
+            },
+            emulateJSON: true
+        }).then(function(response) {
+            this.myTxt = response.data;
+        }, function(response) {
+            // handle error
+          this.myTxt ='error: '+response.status;
+        });
+    },
+    // 测试使用post接口
+    myBtnClickPost:function(){
+      this.$http.post('/data', {name:'测试后台 post'}, {
+            headers: {
+                "X-Requested-With": "XMLHttpRequest"
+            },
+            emulateJSON: true
+        }).then(function(response) {
+            this.myTxt = response.data;
+        }, function(response) {
+            // handle error
+          this.myTxt ='error: '+response.status;
+        });
     }
   }
 }
